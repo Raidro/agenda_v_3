@@ -4,6 +4,9 @@ package br.senac.rn.agenda.repository;
 import br.senac.rn.agenda.model.Contato;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+import java.lang.reflect.Type;
+import java.util.List;
 
 public class ContatoRepository {
 
@@ -25,5 +28,12 @@ public class ContatoRepository {
 
     }
 
+    public List <Contato> findAll(){
+
+        String jpql = "";
+        TypedQuery<Contato> query = getEm().createQuery(jpql, Contato.class);
+        return query.getResultList();
+
+    }
 
 }
