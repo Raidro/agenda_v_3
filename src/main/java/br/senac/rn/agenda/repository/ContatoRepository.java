@@ -30,7 +30,7 @@ public class ContatoRepository {
 
     public List <Contato> findAll(){
 
-        String jpql = "";
+        String jpql = "FROM Contato c"; // comando completo: SELECT C FROM Contato c;
         TypedQuery<Contato> query = getEm().createQuery(jpql, Contato.class);
         return query.getResultList();
 

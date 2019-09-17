@@ -2,6 +2,7 @@ package br.senac.rn.agenda;
 
 import br.senac.rn.agenda.model.Contato;
 import br.senac.rn.agenda.repository.ContatoRepository;
+import com.sun.javaws.progress.PreloaderPostEventListener;
 
 public class AgendaApplication {
 
@@ -14,12 +15,17 @@ public class AgendaApplication {
 //        ContatoRepository repository = new ContatoRepository();
 //        repository.save(tiago);
 
-        Contato mateus  = new Contato();
-        mateus.setNome("Mateus  Sátiro");
-        mateus.setFone("99999-5454");
-        ContatoRepository repository = new ContatoRepository();
-        repository.save(mateus);
+//        Contato mateus  = new Contato();
+//        mateus.setNome("Mateus  Sátiro");
+//        mateus.setFone("99999-5454");
+//        ContatoRepository repository = new ContatoRepository();
+//        repository.save(mateus);
 
+        //==================//
+        ContatoRepository repository = new ContatoRepository();
+        for (Contato contato : repository.findAll() ){
+            System.out.println(contato.getNome());
+        }
 
     }
 
